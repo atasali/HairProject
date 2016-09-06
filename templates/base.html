@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    	    <title>{% block title %}HairDress{% endblock %}</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    {% endblock %}
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+    	{% block container %}
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/"><b>Anasayfa</b></a>
+                    </li>
+                     {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url "logout"%}"><b>Çıkış yap ({{ user }})</b></a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url "register" %}"><b>Kayıt</b></a>
+                    </li>
+                    <li><a href="{% url "login" %}"><b>Giriş</b></a></li>
+                     {% endif %}
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                <div class="content">
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+                </div>
+            </div>
+     </div>
+
+    	{% endblock %}
+    </div>
+    {% block script %}
+    {% endblock %}
+  </body>
+</html>

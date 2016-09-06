@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block head %}
+<head>
+    <title> Çalışanlar </title>
+</head>
+{% endblock %}
+{% block content %}
+<body>
+        <h1> Çalışanlar </h1>
+<form action="" method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Ekle" />
+</form>
+{% endblock %}
+</body>
+
+
+
