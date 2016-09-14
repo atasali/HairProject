@@ -12,10 +12,11 @@ from mbella.form import (
 # Create your views here.
 
 def home(request):
-    customer = Customer.objects.all()
+    customers = Customer.objects.all()
     return render(request, 'home.html',
         {
             'title': 'AnaSayfa',
+            'customers' : customers,
         }
     )
 
@@ -123,6 +124,7 @@ def genel_rapor(request):
 
     return render(request, 'genel_rapor.html',
         {
-            'form' : form
+            'form' : form,
+            'title' : 'Genel Rapor',
         }
     )
