@@ -12,15 +12,25 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-def home(request, Sales_Slip_Acton_id=1):
-    salesslipactions = Sales_Slip_Action.objects.all()
+@login_required(login_url='login')
+def home(request):
+    salesslipactions = Sales_Slip_Action.objects.filter(user_id = request.session.user_id)
     return render(request, 'home.html',
         {
             'title' : 'AnaSayfa',
             'salesslipactions' : salesslipactions,
         }
-    )
+                  )
 
+# def home(request):
+#     customers = Customer.objects.all()
+#     return render(request, 'home.html',
+#         {
+#             'title': 'AnaSayfa',
+#             'customers' : customers,
+#         }
+#     )
+@login_required(login_url='login')
 def musteriler(request):
     customers = Customer.objects.all()
     form = CustomerCreationForm()
@@ -46,7 +56,7 @@ def musteriler(request):
         }
     )
 
-
+@login_required(login_url='login')
 def calisanlar(request):
     employees = Employee.objects.all()
     form = EmployeeCreationForm()
@@ -71,7 +81,7 @@ def calisanlar(request):
         }
     )
 
-
+@login_required(login_url='login')
 def hizmetler(request):
     servicess = Services.objects.all()
     form = ServicesCreationForm()
@@ -95,7 +105,7 @@ def hizmetler(request):
             'form': form
         }
     )
-
+@login_required(login_url='login')
 def raporlar(request):
     salesslips = Sales_Slip.objects.all()
     form = SalesSlipCreationForm()
@@ -204,4 +214,12 @@ def yeni_rapor(request):
                       'form': form
                   }
             )
+
+
+    return render(request, 'genel_rapor.html',
+        {
+            'form' : form,
+            'title' : 'Genel Rapor',
+        }
+    )
 

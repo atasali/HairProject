@@ -34,7 +34,7 @@ def login(request):
 
 	if request.method == 'POST':
 		form = LoginForm(request.POST)
-
+		request.session['name'] = request.POST['username']
 		if form.is_valid():
 			auth_login(request, form.user)
 			# messages.info(
