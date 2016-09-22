@@ -26,7 +26,7 @@ class User(models.Model):
 # Müşteri bilgilerinin oluşturulduğu model
 class Customer(models.Model):
     user = models.ForeignKey(User, null=True)
-    admin = models.ForeignKey(settings.AUTH_USER_MODEL)
+    admin = models.ForeignKey(settings.AUTH_USER_MODEL, null=True)
     ad_soyad = models.CharField(max_length=255)
     dogum_tarihi = models.DateField(null=True)
     eklenme_tarihi = models.DateTimeField(default=timezone.now)
@@ -47,7 +47,7 @@ class Customer(models.Model):
 class Employee(models.Model):
     user = models.ForeignKey(User, null=True)
     ad_soyad = models.CharField(max_length=255)
-    dogum_tarihi = models.DateField(blank=True, null=True)
+    dogum_tarihi = models.DateField(null=True)
     #image = models.ImageField(upload_to="Employee")
 
     def __str__(self):
@@ -109,11 +109,5 @@ class Sales_Slip_Action(models.Model):
 
     class Meta:
         verbose_name_plural = "Kasa Fişi Raporu"
-
-
-
-
-
-
 
 

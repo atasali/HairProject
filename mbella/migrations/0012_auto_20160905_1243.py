@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='customer',
             name='dogum_tarihi',
-            field=models.DateField(blank=True, default=1, null=True),
+            field=models.DateField(blank=True,  null=True),
         ),
     ]

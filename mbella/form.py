@@ -10,6 +10,7 @@ class CustomerCreationForm(ModelForm):
     class Meta:
         model = Customer
         fields = (
+            'admin',
             'ad_soyad',
             'dogum_tarihi',
             'eklenme_tarihi',

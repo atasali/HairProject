@@ -4,7 +4,6 @@ from django.contrib.auth import (
 	login as auth_login,
 	logout as auth_logout
 )
-
 from profiles.form import RegistrationForm, LoginForm
 
 def register(request):
@@ -24,7 +23,10 @@ def register(request):
 			return redirect('login')
 
 	return render(request, 'register.html', {
+
+		'title': 'Kayıt Ol',
 		'form': form,
+
 	})
 
 def login(request):
@@ -43,9 +45,15 @@ def login(request):
 			return redirect('/')
 
 	return render(request, 'login.html', {
-		'form': form
+
+		'title': 'Giriş Yap',
+		'form': form,
+
 	})
+
 
 def logout(request):
 	auth_logout(request)
 	return redirect('/')
+
+

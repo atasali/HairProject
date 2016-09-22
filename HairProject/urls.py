@@ -20,7 +20,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.views.static import serve
 from mbella.views import (
-     home, musteriler, calisanlar, hizmetler,raporlar,genel_rapor
+     home, musteriler, calisanlar, hizmetler,raporlar, yeni_musteri, yeni_hizmet, yeni_calisan, yeni_rapor
 )
 from profiles.views import (
     login, logout, register
@@ -34,9 +34,12 @@ urlpatterns = [
     url(r'^register/', register, name="register"),
     url(r'^musteriler$', musteriler, name="müşteriler"),
     url(r'^calisanlar$', calisanlar, name="çalışanlar"),
-    url(r'^hizmetler$', hizmetler, name="çalışanlar"),
-    url(r'^raporlar$', raporlar, name="çalışanlar"),
-    url(r'^genel_rapor$', genel_rapor, name="çalışanlar"),
+    url(r'^hizmetler$', hizmetler, name="hizmetler"),
+    url(r'^raporlar$', raporlar, name="raporlar"),
+    url(r'^yeni_musteri$', yeni_musteri, name="yeni_musteri"),
+    url(r'^yeni_hizmet$', yeni_hizmet, name="yeni_hizmet"),
+    url(r'^yeni_calisan$', yeni_calisan, name="yeni_calisan"),
+    url(r'^yeni_rapor$', yeni_rapor, name='yeni_rapor')
 
 ]
 

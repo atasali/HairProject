@@ -1,22 +1,123 @@
 {% extends "base.html" %}
 {% load static %}
-
-
 {% block head %}
-<head>
-    <title> Raporlar </title>
-</head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>HairDress | {{ title }}</title>
+
+    <!-- Bootstrap -->
+    <link href="{% static "vendors/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{% static "vendors/iCheck/skins/flat/green.css" %}" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="{% static "vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" %}" rel="stylesheet">
+    <!-- jVectorMap -->
+    <link href="{% static "css/maps/jquery-jvectormap-2.0.3.css" %}" rel="stylesheet"/>
+
+    <!-- Custom Theme Style -->
+    <link href="{% static "build/css/custom.min.css" %}" rel="stylesheet">
+
 {% endblock %}
 {% block content %}
-<body>
-        <h1> Raporlar </h1>
-<form action="" method="post">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<input type="submit" value="Ekle" />
-</form>
+<h1> Raporlar </h1>
+		<div class="clearfix"></div>
+            <form class="text-right" method="get" action="/yeni_rapor">
+                <button type="submit">Yeni Ekle</button>
+            </form>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-24">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Raporlar </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
+                        <!--<ul class="dropdown-menu" role="menu">-->
+                          <!--<li><a href="#">Settings 1</a>-->
+                          <!--</li>-->
+                          <!--<li><a href="#">Settings 2</a>-->
+                          <!--</li>-->
+                        <!--</ul>-->
+                      <!--</li>-->
+                      <!--<li><a class="close-link"><i class="fa fa-close"></i></a>-->
+                      <!--</li>-->
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <table class="table">
+                      <thead>
+                            <tr>
+
+                                <th>#</th>
+                                <th>Müşteriler</th>
+                                <th>Çalışanlar</th>
+                                <th>Zaman</th>
+
+                            </tr>
+
+                      </thead>
+                      <tbody>
+                      {% for salesslip in salesslips  %}
+
+                        <tr>
+
+                              <td>{{ salesslip.id }}</td>
+                              <td>{{ salesslip.musteriler}}</td>
+                              <td>{{ salesslip.calisanlar }}</td>
+                              <td>{{ salesslip.kasa_fisi_zamani }}</td>
+
+                        </tr>
+                      {% endfor %}
+                        <!--<tr>-->
+                          <!--<th scope="row">2</th>-->
+                          <!--<td>Jacob</td>-->
+                          <!--<td>Thornton</td>-->
+                          <!--<td>@fat</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                          <!--<th scope="row">3</th>-->
+                          <!--<td>Larry</td>-->
+                          <!--<td>the Bird</td>-->
+                          <!--<td>@twitter</td>-->
+                        <!--</tr>-->
+
+                      </tbody>
+                    </table>
+
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+                  </div>
+
+
+<!--<form >-->
+
+<!--<ul class="form-style-1">-->
+
+    <!--{% csrf_token %}-->
+	<!--{{ form.as_p }}-->
+        <!--<input type="submit" value="Submit" />-->
+
+<!--</ul>-->
+<!--</form>-->
 {% endblock %}
-</body>
+
 
 
 
