@@ -20,11 +20,13 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.views.static import serve
 from mbella.views import (
-     home, musteriler, calisanlar, hizmetler,raporlar, yeni_musteri, yeni_hizmet, yeni_calisan, yeni_rapor
+     home, musteriler, calisanlar, hizmetler,raporlar,
+     yeni_musteri, yeni_hizmet, yeni_calisan, yeni_rapor,
+     login, register, logout
 )
-from profiles.views import (
-    login, logout, register
-)
+# from profiles.views import (
+#     login, logout, register
+# )
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

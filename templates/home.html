@@ -74,13 +74,13 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Tables <small>Some examples to get you started</small></h3>
+                <!--<h3>Tables <small>Some examples to get you started</small></h3>-->
               </div>
 
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+              <div class="text-right" class="title_right">
+                <div class="col-md-3 col-sm-3 col-xs-8 form-group pull-right top_search">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
+                    <input type="text"  class="form-control" placeholder="Search for...">
                     <span class="input-group-btn">
                       <button class="btn btn-default" type="button">Go!</button>
                     </span>
@@ -93,74 +93,74 @@
 
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Basic Tables <small>basic table subtitle</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Ad Soyad</th>
-                          <th>Doğum Tarihi</th>
-                          <th>Eklenme Tarihi</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {% for customer in customers %}
-                          <tr>
-                            <th scope="row">{{ customer.id }}</th>
-                            <td>{{ customer.ad_soyad }}</td>
-                            <td>{{ customer.dogum_tarihi }}</td>
-                            <td>{{ customer.eklenme_tarihi }}</td>
-                          </tr>
-                        {% endfor %}
-                      </tbody>
-                    </table>
+                <!--<div class="x_panel">-->
+                  <!--<div class="x_title">-->
+                    <!--<h2>Basic Tables <small>basic table subtitle</small></h2>-->
+                    <!--<ul class="nav navbar-right panel_toolbox">-->
+                      <!--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
+                      <!--</li>-->
+                      <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
+                        <!--<ul class="dropdown-menu" role="menu">-->
+                          <!--<li><a href="#">Settings 1</a>-->
+                          <!--</li>-->
+                          <!--<li><a href="#">Settings 2</a>-->
+                          <!--</li>-->
+                        <!--</ul>-->
+                      <!--</li>-->
+                      <!--<li><a class="close-link"><i class="fa fa-close"></i></a>-->
+                      <!--</li>-->
+                    <!--</ul>-->
+                    <!--<div class="clearfix"></div>-->
+                  <!--</div>-->
+                  <!--<div class="x_content">-->
+                    <!--<table class="table">-->
+                      <!--<thead>-->
+                        <!--<tr>-->
+                          <!--<th>#</th>-->
+                          <!--<th>Ad Soyad</th>-->
+                          <!--<th>Doğum Tarihi</th>-->
+                          <!--<th>Eklenme Tarihi</th>-->
+                        <!--</tr>-->
+                      <!--</thead>-->
+                      <!--<tbody>-->
+                        <!--{% for customer in customers %}-->
+                          <!--<tr>-->
+                            <!--<th scope="row">{{ customer.id }}</th>-->
+                            <!--<td>{{ customer.ad_soyad }}</td>-->
+                            <!--<td>{{ customer.dogum_tarihi }}</td>-->
+                            <!--<td>{{ customer.eklenme_tarihi }}</td>-->
+                          <!--</tr>-->
+                        <!--{% endfor %}-->
+                      <!--</tbody>-->
+                    <!--</table>-->
 
                   </div>
                 </div>
               </div>
 
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Stripped table <small>Stripped table subtitle</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
+              <!--<div class="col-md-6 col-sm-6 col-xs-12">-->
+                <!--<div class="x_panel">-->
+                  <!--<div class="x_title">-->
+                    <!--<h2>Stripped table <small>Stripped table subtitle</small></h2>-->
+                    <!--<ul class="nav navbar-right panel_toolbox">-->
+                      <!--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
+                      <!--</li>-->
+                      <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
+                        <!--<ul class="dropdown-menu" role="menu">-->
+                          <!--<li><a href="#">Settings 1</a>-->
+                          <!--</li>-->
+                          <!--<li><a href="#">Settings 2</a>-->
+                          <!--</li>-->
+                        <!--</ul>-->
+                      <!--</li>-->
+                      <!--<li><a class="close-link"><i class="fa fa-close"></i></a>-->
+                      <!--</li>-->
+                    <!--</ul>-->
+                    <!--<div class="clearfix"></div>-->
+                  <!--</div>-->
+                  <!--<div class="x_content">-->
 
               <!--<div class="col-md-6 col-sm-6 col-xs-12">-->
                 <!--<div class="x_panel">-->
@@ -371,9 +371,9 @@
                             <th>
                               <input type="checkbox" id="check-all" class="flat">
                             </th>
-                            <th class="column-title">Hizmet </th>
-                            <th class="column-title">Zamanı </th>
-                            <th class="column-title">Ödendi </th>
+                            <th class="column-title">Müşteriler </th>
+                            <th class="column-title">Çalışanlar </th>
+                            <th class="column-title">Satış Zamanı </th>
                             <!--<th class="column-title"> </th>-->
                             <!--<th class="column-title"> </th>-->
                             <!--<th class="column-title"> </th>-->
@@ -386,15 +386,15 @@
                         </thead>
 
                         <tbody>
-                                                    {% for salesslipaction in salesslipactions %}
+                        {% for salesslip in salesslips %}
 
                           <tr class="even pointer">
                             <td class="a-center ">
                               <input type="checkbox" class="flat" name="table_records">
                             </td>
-                            <td class=" ">{{ salesslipaction.hizmetler }}</td>
-                            <td class=" ">{{ salesslipaction.kasa_fisi_zamani }}</td>
-                            <td class=" ">{{ salesslipaction.is_paid }}</td>
+                            <td class=" ">{{ salesslip.musteriler }}</td>
+                            <td class=" ">{{ salesslip.calisanlar }}</td>
+                            <td class=" ">{{ salesslip.kasa_fisi_zamani }}</td>
                             {% endfor %}
                             <!--<td class=" ">John Blank L</td>-->
                             <!--<td class=" ">Paid</td>-->

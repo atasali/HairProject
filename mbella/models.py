@@ -8,8 +8,9 @@ from decimal import Decimal
 
 class User(models.Model):
     kullanici_adi = models.CharField(max_length=255)
+    parola = models.CharField( max_length=255)
     mail = models.CharField(max_length=255)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
     is_premium = models.BooleanField(default=False)
 
 
