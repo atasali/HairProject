@@ -52,9 +52,9 @@ def home(request):
 #             'customers' : customers,
 #         }
 #     )
-@login_required(login_url='login')
+#@login_required(login_url='login')
 def musteriler(request):
-    customers = Customer.objects.all()
+    customers = Customer.objects.filter(user_id = request.session['user_id'])
     form = CustomerCreationForm()
 
     if request.method == 'POST':
