@@ -30,7 +30,7 @@ class Customer(models.Model):
     admin = models.ForeignKey(settings.AUTH_USER_MODEL, null=True)
     ad_soyad = models.CharField(max_length=255)
     dogum_tarihi = models.DateField(null=True)
-    eklenme_tarihi = models.DateTimeField(default=timezone.now())
+    eklenme_tarihi = models.DateTimeField(default=timezone.now)
 
     def ekle(self):
         self.eklenme_tarihi = timezone.now()
@@ -89,7 +89,7 @@ class Sales_Slip(models.Model):
     user = models.ForeignKey(User, null=True)
     musteriler = models.ForeignKey(Customer)
     calisanlar = models.ForeignKey(Employee)
-    kasa_fisi_zamani = models.DateTimeField(default=timezone.now())
+    kasa_fisi_zamani = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return format(self.kasa_fisi_zamani)
